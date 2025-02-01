@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="../mens page/itemcard.css">
+    <link rel="stylesheet" href="order-confirmation.css">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="confirmationDetails">
+        <h2>🎉 Order Placed Successfully!</h2>
+        <p>Order ID: <span id="orderId"></span></p>
+        <p>Estimated Delivery: <span id="deliveryDate"></span></p>
+        <div id="orderItemsConfirmation"></div>
+        <p class="total-amount">Total Paid: ₹<span id="confirmationTotal"></span></p>
+        <button id="continueShopping">Continue Shopping</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.js"></script>
+    <script src="order-confirmation.js"></script>
+</body>
+</html>

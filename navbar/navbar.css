@@ -16,12 +16,36 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 45%;
+    gap:35%;
     border-bottom: 1px solid #e0e0e0;
     box-shadow: 0 3px 6px 0 rgb(0 0 0 / 20%);
-    background-color: white;
-   
+    background-color: white; 
 }
+.navbar-nav {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  gap: 15px; /* Add gap between items */
+}
+
+.nav-item {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+}
+
+.nav-link {
+  display: flex;
+  align-items: center; /* Align icon and text vertically */
+  position: relative; /* Required for positioning the cart count */
+}
+
+.fa-solid {
+  font-size: 15px;
+  padding: 6px;
+  border-radius: 50%;
+  background-color: rgb(44, 65, 82);
+  color: white;
+}
+
 .cart-count {
   background-color: red;
   color: white;
@@ -34,34 +58,24 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  top: 8px;
-  right: 5px;
-}
-.cart-btn {
-  position: relative;
+  position: absolute; /* Position the count relative to the cart icon */
+  top: -5px; /* Adjust position */
+  right: -5px; /* Adjust position */
 }
 
-.fa-solid {
-    font-size: 15px;
-    padding:6px;
-    border-radius: 50%;
-    background-color: rgb(44,65,82);
-    color: white;
-    }
-#signupbtn, #loginbtn,#signupsubmitbtn,#loginsubmitbtn{
-    color: white;
-    background-color: rgb(44,65,82);
-    border:2px solid  rgb(44,65,82);
-    gap: 15px;
-    margin: 4px;
-    border-radius: 12px;
-}
-#signupbtn:hover,#loginbtn:hover,#signupsubmitbtn:hover,#loginsubmitbtn:hover {
-    background-color:white;
-    color:rgb(44,65,82)
+#signupbtn, #loginbtn {
+  color: white;
+  background-color: rgb(44, 65, 82);
+  border: 2px solid rgb(44, 65, 82);
+  border-radius: 12px;
+  padding: 5px 10px; /* Add padding for better button size */
+  margin-left: 10px; /* Add margin for spacing */
 }
 
+#signupbtn:hover, #loginbtn:hover {
+  background-color: white;
+  color: rgb(44, 65, 82);
+}
 footer {
     background-color: #2C4152;
     font-family: 'Source Sans Pro', sans-serif;

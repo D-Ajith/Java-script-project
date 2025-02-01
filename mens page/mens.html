@@ -99,13 +99,39 @@
           </div>
         </div>
     </nav>
-    <button onclick="getShirt()">Shirts</button>
-    <button onclick="getPant()">Pants</button>
-    <button onclick="getJeans()">Jeans</button>
-    <button onclick="getPolo()">Tshirt</button>
-     <button onclick="getJackets()">Jackets</button>
-     <button onclick="getTracks()">Tracks</button>
-     <div id="cardcontainer"></div>
+    <div id="topparent">
+        <div class="filterbtn">
+            <label class="checkbox-btn">
+                <input type="checkbox" onclick="getShirt()"> Shirts
+            </label>
+            <label class="checkbox-btn">
+                <input type="checkbox" onclick="getPant()"> Pants
+            </label>
+            <label class="checkbox-btn">
+                <input type="checkbox" onclick="getJeans()"> Jeans
+            </label>
+            <label class="checkbox-btn">
+                <input type="checkbox" onclick="getPolo()"> T-shirt
+            </label>
+            <label class="checkbox-btn">
+                <input type="checkbox" onclick="getJackets()"> Jackets
+            </label>
+            <label class="checkbox-btn">
+                <input type="checkbox" onclick="getTracks()"> Tracks
+            </label>
+            <label class="checkbox-btn">
+                <input type="checkbox" onclick="getLowToHigh()"> Low to High (₹500 - ₹1000)
+            </label>
+            <label class="checkbox-btn">
+                <input type="checkbox" onclick="getHighToLow()"> High to Low (Above ₹2000)
+            </label>
+            <label class="checkbox-btn">
+                <input type="checkbox" onclick="getMidRange()"> Mid-Range (₹1000 - ₹2000)
+            </label>
+        </div>
+        <div id="cardcontainer"></div>
+    </div>
+    
     <div class="footer">
         <img src="https://assets.ajio.com/medias/sys_master/images/images/h12/hda/27958749790238/13102020-D-unisex-ajiocares-strip.jpg" alt="fotter above" style="position: relative; width: 100%;">
         <img src="https://vshubhams.github.io/Ajio-clone/images/stripe/above-footer.png" alt="fotter above" style="position: relative; width: 100%;">

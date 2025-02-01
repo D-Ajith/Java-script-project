@@ -121,7 +121,8 @@ body {
       .pay_title {
         font-size: 16px;
         color: #ccc;
-      }
+      }   
+
       @media (max-width: 767px ) {
         footer {
           padding-top: 60px;

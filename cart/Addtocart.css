@@ -1,35 +1,58 @@
 body {
     padding-top: 86px;
-}
-.navbar {
+  }
+  .navbar {
     z-index: 1030;
-}
-.navbar-brand{
+  }
+  .navbar-brand{
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size:20px;
     font-weight: 900px;
     color:rgb(44,65,82);
+  }
+.card{
+    height:700px;
+    width:400px;
+    overflow: hidden; 
+    padding: 0;
+}
+.card p{
+    padding-top:4%;
+}
+.card > img {
+    width: 100%;
+    height: 50%;
+    object-fit: contain; 
+    object-position: center;
+    display: block;
+    margin: 0;
+    padding: 0;
+    
+    transition: transform 0.4s ease-in-out; 
+}
+.card:hover > img {
+    transform: scale(1.05); /* Zoom effect */
 }
 .cart-count {
-  background-color: red;
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-  border-radius: 50%;
-  width: 18px;
-  height: 18px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  top: 8px;
-  right: 10px;
-}
-.cart-btn {
-  position: relative;
-}
-#parent{
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 8px;
+    right: 10px;
+  }
+  .cart-btn {
+    position: relative;
+  }
+  #parent{
     padding-top:20px;
     display: flex;
     justify-content: center;
@@ -39,8 +62,8 @@ body {
     box-shadow: 0 3px 6px 0 rgb(0 0 0 / 20%);
     background-color: white;
    
-}
-.fa-solid {
+  }
+  .fa-solid {
     font-size: 15px;
     padding:6px;
     border-radius: 50%;
@@ -122,7 +145,6 @@ body {
         font-size: 16px;
         color: #ccc;
       }
-      
       @media (max-width: 767px ) {
         footer {
           padding-top: 60px;

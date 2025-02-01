@@ -106,14 +106,39 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-    <button onclick="getBoys()">Boys</button>
-    <button onclick="getGirls()">Girls</button>
-    <button onclick="getTShirts()">T shirts</button>
-    <button onclick="getShirts()">Shirts</button>
-    <button onclick="getPajamas()">Pajamas</button>
-    <button onclick="getSweaters()">Sweater</button>
-
-    <div id="cardcontainer"></div>
+    <div id="topparent">   
+    <div class="filterbtn">
+        <label class="checkbox-btn">
+            <input type="checkbox" onclick="getBoys()"> Boys
+        </label>
+        <label class="checkbox-btn">
+            <input type="checkbox" onclick="getGirls()"> Girls
+        </label>
+        <label class="checkbox-btn">
+            <input type="checkbox" onclick="getTShirts()"> T-shirts
+        </label>
+        <label class="checkbox-btn">
+            <input type="checkbox" onclick="getShirts()"> Shirts
+        </label>
+        <label class="checkbox-btn">
+            <input type="checkbox" onclick="getPajamas()"> Pajamas
+        </label>
+        <label class="checkbox-btn">
+            <input type="checkbox" onclick="getSweaters()"> Sweater
+        </label>
+        <label class="checkbox-btn">
+            <input type="checkbox" onclick="getLowToHigh()"> Low to High (₹500 - ₹1000)
+        </label>
+        <label class="checkbox-btn">
+            <input type="checkbox" onclick="getHighToLow()"> High Range (Above ₹2000)
+        </label>
+        <label class="checkbox-btn">
+            <input type="checkbox" onclick="getMidRange()"> Mid-Range (₹1000 - ₹2000)
+        </label>
+    </div>
+    
+        <div id="cardcontainer"></div>
+    </div>
     <div class="footer">
         <img src="https://assets.ajio.com/medias/sys_master/images/images/h12/hda/27958749790238/13102020-D-unisex-ajiocares-strip.jpg" alt="fotter above" style="position: relative; width: 100%;">
         <img src="https://vshubhams.github.io/Ajio-clone/images/stripe/above-footer.png" alt="fotter above" style="position: relative; width: 100%;">

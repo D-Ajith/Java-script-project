@@ -2,64 +2,270 @@
     display: flex !important;
     flex-wrap: wrap !important;
     gap: 20px !important;
-    padding-left: 10%;
+    /* padding-left: 15%; */
+    justify-content: center;
 }
-
 .card {
-    width: 400px;
-    box-shadow: 4px 4px 5px rgb(44, 65, 82);
+    width: 330px;
+    height: 610px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 12px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    box-sizing: border-box;
     overflow: hidden;
+    background-color: #fff; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
-.card>img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: center top;
-    transition: transform 0.4s ease-in-out;
-    display: block;
-    margin: 0;
-    padding: 0;
-    line-height: 0;
-}
-
-.card img:hover {
-    transform: scale(1.05);
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .card > img {
     width: 100%;
-    height: 60%;
+    height: 370px;
+    object-fit: fill; 
+    object-position: center;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #eee;
+}
+
+.card-content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.card-content h4 {
+    font-size: 18px;
+    margin: 0 0 10px 0;
+    color: #333;
+    text-align: center;
+}
+
+.card-content p {
+    font-size: 14px; 
+    margin: 0 0 8px 0; 
+    color: #666;
+    text-align: center; 
+}
+
+.card-content .price {
+    font-size: 16px; 
+    font-weight: bold;
+    color: #000;
+    text-align: center; 
 }
 
 .button-container {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    padding: 10px;
+    gap: 10px; 
+    padding: 10px 15px; 
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee; /* Separator above buttons */
 }
 
 .button-container button {
     flex-grow: 1;
-    width: auto;
-    margin: 0 10px;
-    border-radius: 12px;
-    padding: 10px 20px;
-    text-align: center;
-    white-space: nowrap;
-}
-.footer{
-    padding-top: 2%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px; 
+    background-color: rgb(44, 65, 82);
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease; /* Smooth hover effect */
 }
 
-.button-container button:hover{
-        background-color:rgb(44, 65, 82) ;
-        color:white
+.button-container button:hover {
+    background-color: white; 
+    color: rgb(44, 65, 82);
+    border: 2px solid rgb(44, 65, 82); 
+}
+
+.button-container .remove-btn {
+    background-color: #dc3545;
+}
+
+.button-container .remove-btn:hover {
+    background-color: #c82333;
+}
+/* Add to itemcard.css */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  
+  .qty-btn {
+    padding: 5px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #f8f9fa;
+  }
+  
+  .checkout-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  .order-summary {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .confirmation-card {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
+  }
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+/* Top-level container */
+#topparent {
+    display: flex;
+    min-height: 100vh;
+    background-color: white;
+    flex-direction: row; /* Default layout for desktop */
+}
+
+/* Sidebar for filters */
+.sidebar {
+    width: 250px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+/* Filter buttons container */
+.filterbtn {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Checkbox-style button */
+.checkbox-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Styling for checkbox */
+.checkbox-btn input[type="checkbox"] {
+    margin: 0;
+}
+
+/* Card container */
+#cardcontainer {
+    flex: 1;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Card Styling */
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.card h3 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Media Queries for Tablet (between 600px and 900px) */
+@media (max-width: 900px) {
+    #topparent {
+        flex-direction: column; /* Stack filter sidebar and cards */
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 15px;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    #cardcontainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust grid for tablet */
+        justify-items: center; /* Center the cards */
+    }
+
+    .filterbtn {
+        margin-bottom: 20px; /* Add space between filters and cards */
+    }
+}
+
+/* Media Queries for Mobile (less than 600px) */
+@media (max-width: 600px) {
+    .checkbox-btn {
+        font-size: 12px; /* Smaller text for mobile */
+    }
+
+    #topparent {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+        border-right: none;
+    }
+
+    #cardcontainer {
+        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    }
+
+    .filterbtn {
+        gap: 5px;
+    }
 }
