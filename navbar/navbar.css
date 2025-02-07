@@ -1,51 +1,15 @@
 body {
-    padding-top: 86px;
-    
+  padding-top: 86px;
 }
 .navbar {
-    z-index: 1030;
+  z-index: 1030;
 }
 .navbar-brand{
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    font-size:20px;
-    font-weight: 900px;
-    color:rgb(44,65,82);
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-size:20px;
+  font-weight: 900px;
+  color:rgb(44,65,82);
 }
-#parent{
-    padding-top:20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:35%;
-    border-bottom: 1px solid #e0e0e0;
-    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 20%);
-    background-color: white; 
-}
-.navbar-nav {
-  display: flex;
-  align-items: center; /* Align items vertically in the center */
-  gap: 15px; /* Add gap between items */
-}
-
-.nav-item {
-  display: flex;
-  align-items: center; /* Align items vertically in the center */
-}
-
-.nav-link {
-  display: flex;
-  align-items: center; /* Align icon and text vertically */
-  position: relative; /* Required for positioning the cart count */
-}
-
-.fa-solid {
-  font-size: 15px;
-  padding: 6px;
-  border-radius: 50%;
-  background-color: rgb(44, 65, 82);
-  color: white;
-}
-
 .cart-count {
   background-color: red;
   color: white;
@@ -58,99 +22,126 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute; /* Position the count relative to the cart icon */
-  top: -5px; /* Adjust position */
-  right: -5px; /* Adjust position */
+  position: relative;
+  top: 8px;
+  right: 10px;
 }
-
-#signupbtn, #loginbtn {
-  color: white;
-  background-color: rgb(44, 65, 82);
-  border: 2px solid rgb(44, 65, 82);
-  border-radius: 12px;
-  padding: 5px 10px; /* Add padding for better button size */
-  margin-left: 10px; /* Add margin for spacing */
+.cart-btn {
+  position: relative;
 }
-
-#signupbtn:hover, #loginbtn:hover {
+#parent{
+  padding-top:20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40%;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 3px 6px 0 rgb(0 0 0 / 20%);
   background-color: white;
-  color: rgb(44, 65, 82);
+ 
 }
-footer {
-    background-color: #2C4152;
-    font-family: 'Source Sans Pro', sans-serif;
-    padding-top: 90px;
-    padding-bottom: 40px;
+.fa-solid {
+  font-size: 15px;
+  padding:6px;
+  border-radius: 50%;
+  background-color: rgb(44,65,82);
+  color: white;
   }
-  
-  .menu_item {
+  .btns{
     display: flex;
-    flex-direction: row;
-    color: #CCCCCC;
-    border-bottom: 1px solid #ccc;
-    padding: 40px 0;
-    margin-bottom: 40px;
-    width: 100%;
-    max-width: 1263px;
-    margin: auto;
+    gap:10px;
   }
-  
-  .item_list {
-    display: flex;
-    flex-direction: column;
-    width: 25%;
-  }
-  
-  .ftr_items {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .headline {
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-  
-  .ftr_items > a {
-    text-decoration: none;
-    color: #bfc8cb;
-    margin-bottom: 8px;
-    font-size: 12px;
-  }
-  
-  .ftr_items > a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Payment section */
-  #payment {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 40px 0;
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-  }
-  
-  .pay_img {
-    width: 80px;
-    margin: 15px;
-  }
-  
-  .pay_img > a > img {
-    width: 100%;
-  }
-  
-  .pay_logo {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .pay_title {
-    font-size: 16px;
-    color: #ccc;
-  }
+  #signupbtn,#loginbtn{
+    background-color: rgb(44,65,82);
+    color: white;
+    border-radius: 12px;
+    gap: 10px;
+    padding: 2px 10px;
+    }
+    #signupbtn:hover,#loginbtn:hover{
+      background-color:white;
+      color:rgb(44,65,82);
+      border-radius: 12px;
+      gap: 10px;
+      padding: 2px 10px;
+      }
+  footer {
+      background-color: #2C4152;
+      font-family: 'Source Sans Pro', sans-serif;
+      padding-top: 90px;
+      padding-bottom: 40px;
+    }
+    
+    .menu_item {
+      display: flex;
+      flex-direction: row;
+      color: #CCCCCC;
+      border-bottom: 1px solid #ccc;
+      padding: 40px 0;
+      margin-bottom: 40px;
+      width: 100%;
+      max-width: 1263px;
+      margin: auto;
+    }
+    
+    .item_list {
+      display: flex;
+      flex-direction: column;
+      width: 25%;
+    }
+    
+    .ftr_items {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .headline {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    
+    .ftr_items > a {
+      text-decoration: none;
+      color: #bfc8cb;
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+    
+    .ftr_items > a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Payment section */
+    #payment {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 40px 0;
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+    }
+    
+    .pay_img {
+      width: 80px;
+      margin: 15px;
+    }
+    
+    .pay_img > a > img {
+      width: 100%;
+    }
+    
+    .pay_logo {
+      display: flex;
+      flex-direction: row;
+    }
+    
+    .pay_title {
+      font-size: 16px;
+      color: #ccc;
+    }
+ 
+/* Media Queries for Responsive Design */
  /* For mobile devices */
  @media (max-width: 767px) {
   footer {
@@ -225,6 +216,7 @@ footer {
 
 /* For extra small mobile devices */
 @media (max-width: 331px) {
+  footer{width: 100%;}
   .pay_logo {
     flex-direction: column;
     align-items: center;

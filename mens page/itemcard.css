@@ -156,6 +156,7 @@ body {
     min-height: 100vh;
     background-color: white;
     flex-direction: row; /* Default layout for desktop */
+    padding-left:30px;
 }
 
 /* Sidebar for filters */
@@ -170,6 +171,7 @@ body {
 .filterbtn {
     display: flex;
     flex-direction: column;
+    padding-top:2%;
     gap: 10px;
 }
 
