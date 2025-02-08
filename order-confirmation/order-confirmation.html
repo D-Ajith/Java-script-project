@@ -4,19 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Confirmation</title>
-    <link rel="stylesheet" href="../mens page/itemcard.css">
     <link rel="stylesheet" href="order-confirmation.css">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.css" rel="stylesheet">
 </head>
 <body>
-    <div id="confirmationDetails">
-        <h2>🎉 Order Placed Successfully!</h2>
-        <p>Order ID: <span id="orderId"></span></p>
-        <p>Estimated Delivery: <span id="deliveryDate"></span></p>
-        <div id="orderItemsConfirmation"></div>
-        <p class="total-amount">Total Paid: ₹<span id="confirmationTotal"></span></p>
-        <button id="continueShopping">Continue Shopping</button>
+    <div class="confirmation-container">
+        <!-- Header Section -->
+        <div class="confirmation-header">
+            <img src="https://cdn.dribbble.com/users/2185205/screenshots/7886140/media/90211520c82920dcaf6aea7604aeb029.gif" alt="Order Success" class="success-gif">
+            <h1>🎉 Order Placed Successfully!</h1>
+        </div>
+
+        <!-- Order Details Section -->
+        <div class="confirmation-details">
+            <p><strong>Order ID:</strong> <span id="orderId">   </span></p>
+            <p><strong>Estimated Delivery:</strong> <span id="deliveryDate">   </span></p>
+        </div>
+
+        <!-- Order Items Summary -->
+        <div class="confirmation-items">
+            <h2>Order Summary</h2>
+            <div class="table-container">
+                <table id="orderItemsConfirmation">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                           
+                        </tr>
+                        <!-- Add more rows as needed -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="confirmation-footer">
+            <p class="total-amount"><strong>Total Paid:</strong> ₹<span id="confirmationTotal">1000</span></p>
+            <div class="button-container">
+                <button onclick="window.print()">🖨️ Print Order</button>
+                <button id="continueShopping">Continue Shopping</button>
+            </div>
+        </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.min.js"></script>
     <script src="order-confirmation.js"></script>
 </body>

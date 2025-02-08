@@ -1000,98 +1000,118 @@ let data = [{
   "rating": 4
 }]
 
-let cardcontainer = document.getElementById("cardcontainer")
-cardcontainer.innerHTML = ""
-cardcontainer.className = "cardcontainer"
+let cardcontainer = document.getElementById("cardcontainer");
+cardcontainer.innerHTML = "";
+cardcontainer.className = "cardcontainer";
 
 const getStarRating = (rating) => {
-  let stars = "";
-  for (let i = 0; i < 5; i++) {
-    stars += i < rating ? "⭐" : "☆";
-  }
-  return stars;
+    let stars = "";
+    for (let i = 0; i < 5; i++) {
+        stars += i < rating ? "⭐" : "☆";
+    }
+    return stars;
 };
 
 data.forEach((x) => {
-  let card = document.createElement("div");
-  card.innerHTML = `
-  <img src='${x.image}' width="100%" height="250">
-  <p>${x.brand}</p>
-  <h6>${x.title}</h6>
-  <p><strong>Price:</strong> ₹${x.original_price}</p>
-  <p class="rating"><strong>Rating:</strong> <span class="rating-stars">${getStarRating(x.rating)}</span></p>
-  <span class="button-container">
-    <button id="addtocart">Add to cart</button>
-    <button id="buy">Buy Now</button>
-  </span>`;
-  card.className = "card";
-  cardcontainer.append(card);
-
-  card.addEventListener("click", () => {
-    location.href = "../cart/Addtocart.html";
-    localStorage.setItem("item", JSON.stringify(x));
-  });
-
-  card.querySelector("#addtocart").addEventListener("click", (e) => {
-    e.stopPropagation();
-    Swal.fire({
-      title: "Added to cart successfully!",
-      icon: "success",
-      draggable: true
-    });
-    const cartdata = JSON.parse(localStorage.getItem("cartItems")) || [];
-    cartdata.push(x);
-    localStorage.setItem("cartItems", JSON.stringify(cartdata));
-  });
-
-  card.querySelector("#buy").addEventListener("click", (e) => {
-    e.stopPropagation();
-    window.location.href = "../buynow/buynow.html";
-  });
-});
-
-
-
-const displayCards = (filteredData) => {
-  cardcontainer.innerHTML = ""; // Clear previous content
-  filteredData.forEach((x) => {
     let card = document.createElement("div");
     card.innerHTML = `<img src='${x.image}' width="100%" height="250">
-        <p>${x.brand}</p>
-        <h6>${x.title}</h6>
-        <p><strong>Price:</strong> ₹${x.original_price}</p>
-       <p class="rating"><strong>Rating:</strong> <span class="rating-stars">${getStarRating(x.rating)}</span></p>
-        <span class="button-container">
-          <button id="addtocart">Add to cart</button>
-          <button id="buy">Buy Now</button>
-        </span>`
+    <p>${x.brand}</p>
+    <h6>${x.title}</h6>
+    <p><strong>Price:</strong> ₹${x.original_price}</p>
+    <p class="rating"><strong>Rating:</strong> <span class="rating-stars">${getStarRating(x.rating)}</span></p>
+    <span class="button-container">
+      <button id="addtocart">Add to cart</button>
+      <button id="buy">Buy Now</button>
+    </span>`;
     card.className = "card";
     cardcontainer.append(card);
 
+    let addedToCart = false; // Flag to track if the item has been added to the cart
+
     card.addEventListener("click", () => {
-      location.href = "../cart/Addtocart.html";
-      localStorage.setItem("item", JSON.stringify(x));
+        location.href = "../cart/Addtocart.html";
+        localStorage.setItem("item", JSON.stringify(x));
     });
 
     card.querySelector("#addtocart").addEventListener("click", (e) => {
-      e.stopPropagation();
-      Swal.fire({
-        title: "Add to successfully!",
-        icon: "success",
-        draggable: true
-      });
-      const cartdata = JSON.parse(localStorage.getItem("cartItems")) || [];
-      cartdata.push(x);
-      localStorage.setItem("cartItems", JSON.stringify(cartdata));
+        e.stopPropagation();
+        Swal.fire({
+            title: "Added to cart successfully!",
+            icon: "success",
+            draggable: true
+        });
+        const cartdata = JSON.parse(localStorage.getItem("cartItems")) || [];
+        cartdata.push(x);
+        localStorage.setItem("cartItems", JSON.stringify(cartdata));
+        addedToCart = true; // Set the flag to true when item is added to cart
+        updateCartCount();
     });
 
     card.querySelector("#buy").addEventListener("click", (e) => {
-      e.stopPropagation();
-      window.location.href = "../buynow/buynow.html";
+        e.stopPropagation();
+        if (!addedToCart) {
+            Swal.fire({
+                title: "Please add the item to the cart first!",
+                icon: "warning",
+                confirmButtonText: "OK"
+            });
+        } else {
+            window.location.href = "../buynow/buynow.html";
+        }
     });
-  });
-};
+});
 
+const displayCards = (filteredData) => {
+    cardcontainer.innerHTML = ""; // Clear previous content
+    filteredData.forEach((x) => {
+        let card = document.createElement("div");
+        card.innerHTML = `<img src='${x.image}' width="100%" height="250">
+      <p>${x.brand}</p>
+      <h6>${x.title}</h6>
+      <p><strong>Price:</strong> ₹${x.original_price}</p>
+      <p class="rating"><strong>Rating:</strong> <span class="rating-stars">${getStarRating(x.rating)}</span></p>
+      <span class="button-container">
+        <button id="addtocart">Add to cart</button>
+        <button id="buy">Buy Now</button>
+      </span>`;
+        card.className = "card";
+        cardcontainer.append(card);
+
+        let addedToCart = false; // Flag to track if the item has been added to the cart
+
+        card.addEventListener("click", () => {
+            location.href = "../cart/Addtocart.html";
+            localStorage.setItem("item", JSON.stringify(x));
+        });
+
+        card.querySelector("#addtocart").addEventListener("click", (e) => {
+            e.stopPropagation();
+            Swal.fire({
+                title: "Added to cart successfully!",
+                icon: "success",
+                draggable: true
+            });
+            const cartdata = JSON.parse(localStorage.getItem("cartItems")) || [];
+            cartdata.push(x);
+            localStorage.setItem("cartItems", JSON.stringify(cartdata));
+            addedToCart = true; // Set the flag to true when item is added to cart
+            updateCartCount();
+        });
+
+        card.querySelector("#buy").addEventListener("click", (e) => {
+            e.stopPropagation();
+            if (!addedToCart) {
+                Swal.fire({
+                    title: "Please add the item to the cart first!",
+                    icon: "warning",
+                    confirmButtonText: "OK"
+                });
+            } else {
+                window.location.href = "../buynow/buynow.html";
+            }
+        });
+    });
+};
 
 const getItemsByType = (type) => {
   const filteredItems = data.filter(item => item.title.toLowerCase().includes(type));
@@ -1156,3 +1176,20 @@ function updateCartCount() {
 
 // Call the function when the page loads
 updateCartCount();
+
+// Get the button
+let scrollTopBtn = document.getElementById("scrollTopBtn");
+
+// Show the button after scrolling down 200px
+window.onscroll = function () {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollTopBtn.style.display = "block";
+    } else {
+        scrollTopBtn.style.display = "none";
+    }
+};
+
+// Scroll to top when button is clicked
+scrollTopBtn.onclick = function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+};

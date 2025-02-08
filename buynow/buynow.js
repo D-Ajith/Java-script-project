@@ -10,29 +10,27 @@ function updateCartCount() {
     }
 }
 
-// Function to render cart items
+// Function to render cart items in table format
 function renderCart() {
-    cartitemscontainer.innerHTML = "";
+    const cartTableBody = document.getElementById("cartTableBody");
+    cartTableBody.innerHTML = ""; // Clear existing rows
 
     allcartdata.forEach((x, index) => {
-        let card = document.createElement("div");
-        card.innerHTML = `
-            <img src="${x.image}" width="100%" height="250">
-            <div class="card-content">
-                <h4>${x.title}</h4>
-                <p>${x.brand}</p>
-                <p class="price">₹${x.original_price}</p>
-                <div class="quantity-controls">
-                    <button class="qty-btn decrement" data-index="${index}">-</button>
-                    <span class="quantity">${x.quantity || 1}</span>
-                    <button class="qty-btn increment" data-index="${index}">+</button>
-                </div>
-                <div class="item-total">₹${x.original_price * (x.quantity || 1)}</div>
-                <button class="remove-btn" data-index="${index}">Remove</button>
-            </div>`;
-        
-        card.className = "card";
-        cartitemscontainer.append(card);
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td><img src="${x.image}" width="50" height="50" style="object-fit: cover;"></td>
+            <td>${x.title}</td>
+            <td>${x.brand}</td>
+            <td>₹${x.original_price}</td>
+            <td>
+                <button class="qty-btn decrement" data-index="${index}">-</button>
+                <span class="quantity">${x.quantity || 1}</span>
+                <button class="qty-btn increment" data-index="${index}">+</button>
+            </td>
+            <td>₹${x.original_price * (x.quantity || 1)}</td>
+            <td><button class="remove-btn" data-index="${index}">Remove</button></td>
+        `;
+        cartTableBody.appendChild(row);
     });
 
     // Add quantity handlers

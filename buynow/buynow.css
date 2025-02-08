@@ -3,112 +3,97 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
 .main-container {
     display: flex;
     gap: 20px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 20px auto;
+    padding: 0 20px;
 }
 
 /* Left Side: Cart Items */
 #cartitemscontainer {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    flex: 3; /* Takes more width */
 }
 
-.card {
+#cartTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    gap: 15px;
 }
 
-.card img {
+#cartTable th,
+#cartTable td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#cartTable th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: #333;
+}
+
+#cartTable img {
     width: 100px;
-    height: 100px;
-    object-fit: cover;
+    height: 150px;
+    object-fit:contain;
     border-radius: 8px;
 }
 
-.card-content {
-    flex: 1;
-}
-
-.card-content h4 {
-    margin: 0;
-    font-size: 1.2em;
-    color: #333;
-}
-
-.card-content p {
-    margin: 5px 0;
-    color: #666;
-}
-
-.card-content .price {
-    font-weight: bold;
-    color: #333;
-}
-
-.quantity-controls {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 10px 0;
-}
-
-.quantity-controls button {
+#cartTable .qty-btn {
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 3px 7px;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 0.8em;
 }
 
-.quantity-controls button:hover {
+#cartTable .qty-btn:hover {
     background-color: #45a049;
 }
 
-.item-total {
-    font-weight: bold;
-    color: #333;
-}
-
-.remove-btn {
+#cartTable .remove-btn {
     background-color: #ff4d4d;
     color: white;
     border: none;
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 0.8em;
 }
 
-.remove-btn:hover {
+#cartTable .remove-btn:hover {
     background-color: #cc0000;
 }
 
-/* Right Side: Order Summary and Form */
+/* Right Side: Order Summary */
 #orderSummary {
-    flex: 1;
+    flex: 1; /* Takes less width */
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    position: sticky;
+    top: 20px; /* Stick to the top */
 }
 
 #orderSummary h2 {
     margin-top: 0;
     color: #333;
+    font-size: 1.5em;
 }
 
 #orderItems {
@@ -164,13 +149,16 @@ body {
 .form-group label {
     font-weight: bold;
     color: #333;
+    font-size: 0.9em;
 }
 
-.form-group input, .form-group textarea, .form-group select {
-    padding: 10px;
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    font-size: 1em;
+    font-size: 0.9em;
 }
 
 .form-group textarea {
@@ -181,7 +169,7 @@ body {
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 12px 20px;
+    padding: 10px 15px;
     border-radius: 4px;
     font-size: 1em;
     cursor: pointer;

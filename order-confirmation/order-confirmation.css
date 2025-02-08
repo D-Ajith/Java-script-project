@@ -1,80 +1,175 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Global Styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Ensure full page visibility */
+    padding: 20px;
 }
 
+/* Confirmation Container */
 .confirmation-container {
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 30px;
     max-width: 600px;
     width: 100%;
-}
-
-.confirmation-header {
     text-align: center;
-    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-in-out;
 }
 
+/* Success GIF */
+.success-gif {
+    width: 120px;
+    margin-bottom: 15px;
+}
+
+/* Header */
 .confirmation-header h1 {
-    color: #4CAF50;
-    font-size: 2em;
-    margin-bottom: 10px;
+    color: #28a745;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
 
-.confirmation-header p {
-    color: #666;
-    font-size: 1.2em;
-}
-
-.confirmation-details, .confirmation-items {
+/* Order Details */
+.confirmation-details {
     margin-bottom: 20px;
+    text-align: left;
 }
 
-.confirmation-details h2, .confirmation-items h2 {
-    color: #333;
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.confirmation-details p, .confirmation-items ul {
+.confirmation-details p {
     color: #555;
-    font-size: 1em;
-    line-height: 1.6;
+    font-size: 16px;
+    margin: 8px 0;
+    font-weight: 500;
 }
 
-.confirmation-items ul {
-    list-style-type: none;
-    padding: 0;
+.confirmation-details strong {
+    color: #333;
 }
 
-.confirmation-items li {
-    margin-bottom: 5px;
+/* Order Summary */
+.confirmation-items {
+    margin-bottom: 20px;
+    text-align: left;
 }
 
+.confirmation-items h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+/* Order Table */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+thead {
+    background-color: #28a745;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Footer Section */
 .confirmation-footer {
-    text-align: center;
     margin-top: 20px;
 }
 
-.confirmation-footer p {
-    color: #777;
-    font-size: 0.9em;
+.total-amount {
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
-.confirmation-footer a {
-    color: #4CAF50;
-    text-decoration: none;
+/* Buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
-.confirmation-footer a:hover {
-    text-decoration: underline;
+button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:first-child {
+    background-color: #28a745;
+    color: white;
+}
+
+button:first-child:hover {
+    background-color: #218838;
+}
+
+#continueShopping {
+    background-color: #007BFF;
+    color: white;
+}
+
+#continueShopping:hover {
+    background-color: #0056b3;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .confirmation-container {
+        padding: 20px;
+    }
+
+    th, td {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
 }
