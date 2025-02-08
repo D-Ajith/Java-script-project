@@ -29,6 +29,15 @@ body {
     max-width: 400px;
     animation: float 3s ease-in-out infinite;
 }
+#guestuser a {
+    color:red;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#guestuser a:hover {
+    text-decoration: underline;
+}
 @keyframes float {
     0%, 100% {
         transform: translateY(0);
