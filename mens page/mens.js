@@ -803,6 +803,7 @@ const getMidRange = () => {
     displayCards(midRangeData);
 };
 
+
 function updateCartCount() {
     let allcartdata = JSON.parse(localStorage.getItem("cartItems")) || [];
     let cartCount = document.getElementById("cart-count");

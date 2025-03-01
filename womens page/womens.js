@@ -1112,7 +1112,6 @@ const displayCards = (filteredData) => {
         });
     });
 };
-
 const getItemsByType = (type) => {
   const filteredItems = data.filter(item => item.title.toLowerCase().includes(type));
   displayCards(filteredItems);
@@ -1159,7 +1158,6 @@ const getMidRange = () => {
   const midRangeData = data.filter((item) => item.original_price >= 1000 && item.original_price <= 2000);
   displayCards(midRangeData);
 };
-
 
 
 function updateCartCount() {
